@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
 
-import envconf
+import enconf
 
 setup(
-    name='envconf',
-    version=envconf.__version__,
+    name='enconf',
+    version=enconf.__version__,
     description='Easy config setup from the environment',
     url='https://github.com/danielunderwood/envconf',
     author='Daniel Underwood',
