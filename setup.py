@@ -6,11 +6,11 @@ setup(
     name='enconf',
     version=enconf.__version__,
     description='Easy config setup from the environment',
-    url='https://github.com/danielunderwood/envconf',
+    url='https://github.com/danielunderwood/enconf',
     author='Daniel Underwood',
     license='MIT',
 
-    py_modules=['enconf'],
+    packages=find_packages(),
 
     extras_require={
         'test': ['pytest']

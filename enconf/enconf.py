@@ -1,8 +1,6 @@
 import os
 import re
 
-__version__ = '1.0.0dev3'
-
 # Dictionary to get a config class based on key. This is automatically
 # populated on class creation by ConfigMeta. Keys are the name of the class
 # before Config suffix in uppercase
