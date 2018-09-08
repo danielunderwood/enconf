@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-import envconf
+import enconf
 
 
 @pytest.mark.parametrize('iterable,expected', [
