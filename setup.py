@@ -10,7 +10,7 @@ setup(
     author='Daniel Underwood',
     license='MIT',
 
-    packages=find_packages(),
+    py_modules=['enconf'],
 
     extras_require={
         'test': ['pytest']
