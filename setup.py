@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-import enconf
+import .enconf
 
 setup(
     name='enconf',
