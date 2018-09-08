@@ -5,7 +5,7 @@ def get_version():
     filepath = convert_path('enconf/version.py')
     namespace = {}
     with open(filepath) as version_file:
-        exec(version_file, namespace)
+        exec(version_file.read(), namespace)
 
     return namespace['__version__']
 
