@@ -1,7 +1,11 @@
-# envconf
+# enconf
 ![Build Status](https://api.travis-ci.org/danielunderwood/envconf.svg?branch=master)
 
 This library is meant to make configuration from environment variables as easy as possible.
+
+## Installing
+
+You may install from PyPI with `pip install enconf`.
 
 ## Creating a config
 
