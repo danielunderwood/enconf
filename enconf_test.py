@@ -12,7 +12,7 @@ import enconf
     ({'A': 'A'}, str)
 ])
 def test_get_index_type(iterable, expected):
-    result = envconf.get_index_type(iterable)
+    result = enconf.get_index_type(iterable)
     assert expected == result
 
 
@@ -23,7 +23,7 @@ def test_get_index_type(iterable, expected):
     ({'A': 'A'}, str)
 ])
 def test_get_value_type(iterable, expected):
-    result = envconf.get_value_type(iterable)
+    result = enconf.get_value_type(iterable)
     assert expected == result
 
 
@@ -34,7 +34,7 @@ def test_get_value_type(iterable, expected):
     (({'A': 0}, [1, 2]), [1, 1], 2)
 ])
 def test_get_nested(iterable, indices, expected):
-    result = envconf.get_nested(iterable, indices)
+    result = enconf.get_nested(iterable, indices)
     assert expected == result
 
 
@@ -46,7 +46,7 @@ def test_get_nested(iterable, indices, expected):
     ({'A': 0}, ['B'], 1, {'A': 0, 'B': 1})
 ])
 def test_set_nested(iterable, indices, value, expected):
-    envconf.set_nested(iterable, indices, value)
+    enconf.set_nested(iterable, indices, value)
     assert expected == iterable
 
 
@@ -64,7 +64,7 @@ def test_set_nested(iterable, indices, value, expected):
     ('Ending escape', 'a\:', ':', ['a:'])
 ])
 def test_split_escaped(name, string, split_char, expected):
-    result = envconf.split_escaped(string, split_char=split_char)
+    result = enconf.split_escaped(string, split_char=split_char)
     assert expected == result
 
 
@@ -83,7 +83,7 @@ def test_search_env(envs, values, expected):
     old_environ = os.environ
     os.environ = {var: value for var, value in zip(envs, values)}
 
-    result = envconf.ConfigBase._search_env(envs[0].split('__')[0])
+    result = enconf.ConfigBase._search_env(envs[0].split('__')[0])
 
     # Restore original env
     os.environ = old_environ
@@ -91,7 +91,7 @@ def test_search_env(envs, values, expected):
     assert sorted(expected, key=lambda i: i['env_var']) == sorted(result, key=lambda i: i['env_var'])
 
 def test_config_override():
-    class TestConfig(envconf.ConfigBase):
+    class TestConfig(enconf.ConfigBase):
         INT = 0
         STR = 'A'
         EMPTY_LIST = []
@@ -142,7 +142,7 @@ def test_parse_env_value(name, env_setting, original_type, original_value, varia
     """
     Tests ``DefaultConfig._parse_env_value``
     """
-    result = envconf.ConfigBase._parse_env_value(env_setting,
+    result = enconf.ConfigBase._parse_env_value(env_setting,
                                                                original_type,
                                                                original_value)
     assert expected == result
