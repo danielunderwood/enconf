@@ -1,5 +1,5 @@
 # enconf
-![Build Status](https://api.travis-ci.org/danielunderwood/envconf.svg?branch=master)
+[![Build Status](https://travis-ci.org/danielunderwood/enconf.svg?branch=master)](https://travis-ci.org/danielunderwood/enconf)
 
 This library is meant to make configuration from environment variables as easy as possible.
 
